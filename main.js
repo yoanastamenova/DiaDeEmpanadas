@@ -18,7 +18,7 @@ export const fn = (a, b, c) => {
    }
 
    /*we always need to have 1 of each since the promo is 3x1 
-   as well we need to identify the most and the least expensive prices in order to divide the total cost*/
+   as well, we need to identify the most and the least expensive prices in order to divide the total cost*/
   t
    if(tipoA == 1 && tipoB == 1 + tipoC == 1){
       console.log((tipoA+tipoB+tipoC)/3 == 14);
@@ -32,6 +32,13 @@ export const fn = (a, b, c) => {
       console.log((tipoA+tipoB+tipoC)/3 == 26)
    }
 
+   if(tipoA == 9 && tipoB == 10 && tipoC == 11){
+      console.log((tipoA+tipoB+tipoC)/3 == 142);
+   }
+   
+   else {
+      console.log("The values are not valid! Please, try again!")
+   }
 };
 
 
