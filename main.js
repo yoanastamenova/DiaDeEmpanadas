@@ -17,10 +17,6 @@ export const fn = (a, b, c) => {
   // Calculate the average prices
   const avgEmpanadas = [];
   do {
-    if (price.length === 1) {
-      avgEmpanadas.push(price[0]);
-      break;
-    }
     const aPrice = price.shift();
     const cPrice = price.pop();
     const midPrice = (aPrice + cPrice) / 2;
