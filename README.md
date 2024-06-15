@@ -1,6 +1,22 @@
 # Compra de empanadas
 
-## Enunciado del problema
+ 🥟🥟🥟 Bienvenidos al Dia de la Empanada! 🥟🥟🥟
+ 
+ Tenemos una promo de 3 x 1 en la cual se debe pagar solo la empanada mas cara y el resto viene como regalo. Para calcular el problema hemos creado una formula en JavaScript.
+
+ ## Stack
+Tecnologías utilizadas:
+
+<div align="center">
+<a href="https://nodejs.org/es/">
+    <img src= "https://img.shields.io/badge/node.js-026E00?style=for-the-badge&logo=node.js&logoColor=white"/>
+</a>
+<a href="https://developer.mozilla.org/es/docs/Web/JavaScript">
+    <img src= "https://img.shields.io/badge/javascipt-EFD81D?style=for-the-badge&logo=javascript&logoColor=black"/>
+</a>
+ </div>
+ 
+ ## Enunciado del problema 🌐
 
 El profesor Maple se embarca en la tarea de adquirir empanadas para todos los participantes del bootcamp de programación. Dado que hoy es el Día de las Empanadas,  hay una oferta especial en la que te llevas hasta tres empanadas y solo pagas la más cara. Con un presupuesto ajustado para el curso, los profesores debaten para intentar minimizar el gasto total por todas las empanadas.
 
@@ -84,3 +100,7 @@ Pasar los test de validación de errores en la entrada de datos (Throws error)
 ```
 
  
+## Conclusion 📶 
+- Hemos pasado todos los tests
+- Tenemos funcion que calcula las promos
+- 
