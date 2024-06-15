@@ -1,34 +1,20 @@
 export const fn = (a, b, c) => {
-  // Verify input values for being negative, dividable and 
-  const quantity = a + b + c;
-  if (quantity > 40) {
-    throw new Error("Enter valid number of empanadas");
+  const total = a + b + c;
+  if (Math.min(a, b, c) < 0) throw new Error("The input value cannot be negative");
+  if (total % 3 !== 0) throw new Error("The total sum of inputs has to be a multiple of 3");
+  if (total >= 40) throw new Error("The total sum of the inputs has to be less than 40");
+
+  let arrayEmpanadas = Array(a).fill(12).concat(Array(b).fill(14), Array(c).fill(16));
+
+  let combinedPrices = [];
+  while (arrayEmpanadas.length > 1) {
+    combinedPrices.push(...Array(2).fill((arrayEmpanadas.shift() + arrayEmpanadas.pop()) / 2));
   }
-  if (quantity % 3 !== 0) {
-    throw new Error("The total of empanadas surpasses the max amount!");
-  }
-  if (Math.min(a, b, c) < 0) {
-    throw new Error("The total could not be divided by 3!");
-  }
+  if (arrayEmpanadas.length === 1) combinedPrices.push(arrayEmpanadas.pop());
 
-  // Create an array of individual prices
-  const price = [...Array(a).fill(12), ...Array(b).fill(14), ...Array(c).fill(16)];
+  combinedPrices.sort((a, b) => b - a);
 
-  // Calculate the average prices
-  const avgEmpanadas = [];
-  do {
-    const aPrice = price.shift();
-    const cPrice = price.pop();
-    const midPrice = (aPrice + cPrice) / 2;
-    avgEmpanadas.push(midPrice, midPrice);
-  } while (price.length > 1);
+  const toBePaid = combinedPrices.filter((_, i) => i % 3 === 0);
 
-  avgEmpanadas.sort((x, y) => y - x);
-  const finalPrice = avgEmpanadas.reduce((final, inPrice, index) => {
-    return index % 3 === 0
-      ? final + inPrice
-      : final;
-  }, 0);
-
-  return finalPrice;
+  return toBePaid.reduce((total, price) => total + price, 0);
 };
