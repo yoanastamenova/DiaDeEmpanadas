@@ -1,48 +1,35 @@
 export const fn = (a, b, c) => {
-   let conjunto = a + b + c;
-   let tipoA = 12;
-   let tipoB = 14;
-   let tipoC = 16;
-   let precioFinal;
-
-   if(a < 0 || b < 0 || c < 0){
-      console.log("Enter valid number of empanadas");
-   }
-   
-   if(a + b + c > 40){
-      console.log("The total of empanadas surpasses the max amount!");
-   }
-
-   if(a + b + c % 3 !== 0){
-      console.log("The total could not be divided by 3!");
-   }
-
-   /*we always need to have 1 of each since the promo is 3x1 
-   as well, we need to identify the most and the least expensive prices in order to divide the total cost*/
-
-   if(tipoA == 1 && tipoB == 1 + tipoC == 1){
-      console.log((tipoA+tipoB+tipoC)/3 == 14);
-   }
-
-   if(tipoA == 2 && tipoB == 0 && tipoC ==1){
-      console.log((tipoA+tipoB+tipoC)/3 == 14)
-   }
-
-   if(tipoA == 3 && tipoB == 3 && tipoC ==0){
-      console.log((tipoA+tipoB+tipoC)/3 == 26)
-   }
-
-   if(tipoA == 9 && tipoB == 10 && tipoC == 11){
-      console.log((tipoA+tipoB+tipoC)/3 == 142);
-   }
-   
-   else {
-      console.log("The values are not valid! Please, try again!")
-   }
-   
-   
-};
-
-
-
-
+    // Verify input values for being negative, dividable and 
+    const quantity = a + b + c;
+    if (quantity > 40) {
+      throw new Error("Enter valid number of empanadas");
+    }
+    if (quantity % 3 !== 0) {
+      throw new Error("The total of empanadas surpasses the max amount!");
+    }
+    if (Math.min(a, b, c) < 0) {
+      throw new Error("The total could not be divided by 3!");
+    }
+  
+    // Create an array of individual prices
+    const price = [...Array(a).fill(12), ...Array(b).fill(14), ...Array(c).fill(16)];
+  
+    // Calculate the average prices
+    const avgEmpanadas = [];
+    while (price.length > 1) {
+      const aPrice = price.shift();
+      const cPrice = price.pop();
+      const midPrice = (aPrice + cPrice) / 2;
+      avgEmpanadas.push(midPrice, midPrice);
+    }
+  
+    // Sort the average prices in descending order and calculate the total price
+    avgEmpanadas.sort((x, y) => y - x);
+    const finalPrice = avgEmpanadas.reduce((final, inPrice, index) => {
+      return index % 3 === 0 
+      ? final + inPrice 
+      : final;
+    }, 0);
+  
+    return finalPrice;
+  };
