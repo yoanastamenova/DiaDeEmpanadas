@@ -118,4 +118,3 @@ El asistente trabaja de la siguiente manera:
 6. **Calculando el Total**: El asistente suma todos los precios seleccionados para obtener el precio total final.
 
 El objetivo del algoritmo es obtener el precio total más alto posible para tu pedido, siguiendo las reglas de la tienda de empanadas. ¡De esta manera, puedes estar seguro de que estás obteniendo el mejor trato para tu mezcla de empanadas!
-
