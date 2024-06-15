@@ -2,7 +2,7 @@
 
  🥟🥟🥟 Bienvenidos al Dia de la Empanada! 🥟🥟🥟
  
- Tenemos una promo de 3 x 1 en la cual se debe pagar solo la empanada mas cara y el resto viene como regalo. Para calcular el problema hemos creado una formula en JavaScript.
+ Tenemos una promo de 3 x 1 en la cual se debe pagar solo la empanada mas cara y el resto viene como regalo. Para calcular el problema hemos creado una formula en JavaScript. Se puede ver la explicacion de la solucion del problema y la logica detras del funcionamiento en la ultima seccion de este documento.
 
  ## Stack
 Tecnologías utilizadas:
@@ -101,6 +101,21 @@ Pasar los test de validación de errores en la entrada de datos (Throws error)
 
  
 ## Conclusion 📶 
-- Hemos pasado todos los tests
-- Tenemos funcion que calcula las promos
-- 
+- Esta función es como un asistente de compras inteligente que te ayuda a obtener el mejor precio total para una mezcla de empanadas. Tienes tres tipos de empanadas disponibles, cada una con un precio diferente: 12eur, 14eur y 16eur.
+
+El asistente trabaja de la siguiente manera:
+
+1. **Verificando Tu Pedido**: El asistente primero se asegura de que tu pedido sea válido. No puedes pedir un número negativo de empanadas, el número total de empanadas que pidas debe ser múltiplo de 3, y no puedes pedir 40 o más empanadas a la vez.
+
+2. **Listando Todos los Precios**: El asistente luego enumera todos los precios individuales de las empanadas en tu pedido.
+
+3. **Encontrando Pares**: El asistente empareja las empanadas con el precio más alto y más bajo de la lista, encuentra su precio promedio, y lo anota dos veces. Esto se hace hasta que solo quede un precio, que se anota tal cual.
+
+4. **Organizando los Precios**: El asistente luego organiza todos los precios promedio de mayor a menor.
+
+5. **Eligiendo Qué Pagar**: El asistente luego elige cada tercer precio de esta lista, empezando por el más alto.
+
+6. **Calculando el Total**: El asistente suma todos los precios seleccionados para obtener el precio total final.
+
+El objetivo del algoritmo es obtener el precio total más alto posible para tu pedido, siguiendo las reglas de la tienda de empanadas. ¡De esta manera, puedes estar seguro de que estás obteniendo el mejor trato para tu mezcla de empanadas!
+
