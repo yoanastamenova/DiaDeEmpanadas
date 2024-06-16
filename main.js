@@ -21,7 +21,7 @@ export const fn = (a, b, c) => {
   //sorts the prices from higher to lower
   comPrice.sort((a, b) => b - a);
   
-  //final price const created which contains EVERY 3rd PRICE FROM THE SORTED PRICES
+  //final price array created which contains EVERY 3rd PRICE FROM THE SORTED PRICES
   const finalPrice = comPrice.filter((_, i) => i % 3 === 0);
 
   //lastly we return the total price by adding up all the pieces in the finalPrice array
